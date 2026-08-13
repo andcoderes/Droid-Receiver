@@ -123,6 +123,10 @@ see that project's README for where they live on the app side (its own
 `config.h` includes. Neither `.env` nor the generated `secrets.h` are
 committed to git.
 
+## Acknowledgments
+
+This firmware was strongly influenced by the [Amidala](https://github.com/thePunderWoman/Amidala) firmware by [thePunderWoman](https://github.com/thePunderWoman).
+
 ## License
 
 All rights reserved.
