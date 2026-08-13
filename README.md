@@ -1,5 +1,7 @@
 # Chopper Receiver
 
+> This firmware was strongly influenced by the [Amidala](https://github.com/thePunderWoman/Amidala) firmware by [thePunderWoman](https://github.com/thePunderWoman).
+
 Firmware for the Chopper receiver, built on a **Seeed XIAO ESP32-S3**. Bridges
 the DroidController phone app (BLE) to the chopper body and head boards
 (encrypted ESP-NOW), translating JSON commands from the app into the
@@ -122,10 +124,6 @@ see that project's README for where they live on the app side (its own
 `platformio.ini`) and turns `.env` into `include/secrets.h`, which
 `config.h` includes. Neither `.env` nor the generated `secrets.h` are
 committed to git.
-
-## Acknowledgments
-
-This firmware was strongly influenced by the [Amidala](https://github.com/thePunderWoman/Amidala) firmware by [thePunderWoman](https://github.com/thePunderWoman).
 
 ## License
 
