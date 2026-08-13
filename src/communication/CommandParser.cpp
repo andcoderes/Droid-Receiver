@@ -50,7 +50,7 @@ ParseResult CommandParser::parseMessage(const char* json, int len,
     }
     JsonDocument& doc = doc_;
 
-    auto statusField = doc["s"];
+    JsonVariant statusField = doc["s"];
     if (statusField.isNull() || !statusField.is<int>()) {
         return result;  // missing/malformed status — reject rather than guess
     }

@@ -17,9 +17,14 @@ typedef struct {
     int      rssi;
 } esp_now_recv_info_t;
 
+typedef struct {
+    uint8_t* des_addr;
+    uint8_t* src_addr;
+} esp_now_send_info_t;
+
 typedef void (*esp_now_recv_cb_t)(const esp_now_recv_info_t* info,
                                    const uint8_t* data, int len);
-typedef void (*esp_now_send_cb_t)(const uint8_t* mac,
+typedef void (*esp_now_send_cb_t)(const esp_now_send_info_t* tx_info,
                                    esp_now_send_status_t status);
 
 struct esp_now_peer_info_t {
