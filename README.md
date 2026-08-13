@@ -1,6 +1,8 @@
 # Chopper Receiver
 
-> This firmware was strongly influenced by the [Amidala](https://github.com/thePunderWoman/Amidala) firmware by [thePunderWoman](https://github.com/thePunderWoman).
+## Acknowledgments
+
+This firmware was strongly influenced by the [Amidala](https://github.com/thePunderWoman/Amidala) firmware by [thePunderWoman](https://github.com/thePunderWoman).
 
 Firmware for the Chopper receiver, built on a **Seeed XIAO ESP32-S3**. Bridges
 the DroidController phone app (BLE) to the chopper body and head boards
