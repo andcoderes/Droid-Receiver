@@ -52,6 +52,11 @@ static void onBleMessage(const char* json, int len) {
     ParseResult r = parser.parseMessage(json, len,
                                         espNow.isBodyConnected(),
                                         espNow.isHeadConnected());
+    Serial.printf("Parsed: status=%d button='%s' macro=[%d,%d,%d,%d] bubbles=%d\n",
+                  r.bodyCmd.status, r.bodyCmd.button,
+                  r.bodyCmd.macro[0], r.bodyCmd.macro[1],
+                  r.bodyCmd.macro[2], r.bodyCmd.macro[3],
+                  r.bodyCmd.bubbles);
     dispatchResult(r);
 }
 

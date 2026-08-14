@@ -2,6 +2,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+namespace {
+constexpr int16_t BUBBLES_MACRO_ID = 99;
+}
+
 uint8_t CommandParser::mapVolume(uint8_t appVol) {
     return (uint8_t)((uint16_t)appVol * 30 / 255);
 }
@@ -15,6 +19,14 @@ bool CommandParser::isNumeric(const char* s) {
 }
 
 void CommandParser::addMacro(BodyCommand& bcmd, HeadCommand& hcmd, int16_t id, int& idx) {
+    if (id == BUBBLES_MACRO_ID) {
+        // Persistent toggle: bubbles_ is re-stamped onto every future
+        // packet via makeBodyCmd(), so the body just mirrors the current
+        // level and stays on until this flips it off again.
+        bubbles_ = !bubbles_;
+        bcmd.bubbles = bubbles_ ? 1 : 0;
+        return;
+    }
     if (idx >= 4) return;
     bcmd.macro[idx] = id;
     hcmd.macro[idx] = id;

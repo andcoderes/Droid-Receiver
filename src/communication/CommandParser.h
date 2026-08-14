@@ -34,7 +34,8 @@ private:
     static uint8_t mapVolume(uint8_t appVol);
     static bool isNumeric(const char* s);
     // Appends id to both commands' macro arrays if there's room, advancing idx.
-    static void addMacro(BodyCommand& bcmd, HeadCommand& hcmd, int16_t id, int& idx);
+    // Macro 99 is reserved for the bubbles toggle and doesn't consume a slot.
+    void addMacro(BodyCommand& bcmd, HeadCommand& hcmd, int16_t id, int& idx);
     BodyCommand makeBodyCmd(int8_t status) const;
     HeadCommand makeHeadCmd(int8_t status) const;
 
